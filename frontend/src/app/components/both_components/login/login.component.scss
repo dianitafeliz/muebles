@@ -1,0 +1,77 @@
+*,
+*:before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+.form_container{
+    color: black;
+background-color:#EFEFEF;
+width: 25%;
+padding: 70px 30px 50px 30px;
+border-radius: 10px;
+margin: 40px auto;
+text-align: left;
+box-shadow: 10px 5px 5px #a8a7a4;
+}
+h1{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 60px;
+}
+
+input{
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 2px 20% 40px auto;
+}
+.inputx{
+    font-size: 16px;
+    width: 95%;
+    background-color: #f8f6ee;
+    border: 0;
+    color: #8F702F;
+    border-bottom:2px solid #f7f7f7;
+}
+.input:focus{
+    outline: none;
+}
+select{
+    margin: 5px 20% 40px auto;
+}
+button{
+    background-color:#8F702F;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 40px;
+    font-size: 16px;
+    color: #f7f7f7;
+    margin: 0px 0 20px 0;
+}
+button:hover{
+    background-color: #70500c;
+    cursor:pointer;
+}
+button:active{
+    transform: scale(0.95);
+}
+label{
+    font-size: 18px;
+}
+.boton_container{
+    text-align: center;
+}
+.paraiso_img{
+    margin-top: 110px;
+    width: 20%;
+}
+.restore_login{
+    color: black;
+
+}
+@media screen and (max-width: 500px){
+
+    .form_container{
+        width: 80%;
+        }
+}

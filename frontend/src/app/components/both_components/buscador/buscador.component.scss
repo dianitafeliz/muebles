@@ -1,0 +1,14 @@
+.nav{
+    display: flex;
+    background: linear-gradient(to right, #366d9d, #339acc);
+    align-items: center;
+    justify-content: space-between;
+}
+    img{
+        margin: auto 30%;
+    }
+    input{
+        width: 30%;
+        margin-right: 35%;
+        border-radius: 10px;
+    }

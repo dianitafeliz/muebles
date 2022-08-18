@@ -1,0 +1,52 @@
+<app-general-menu></app-general-menu>
+<app-admin-menu></app-admin-menu>
+<div class="bus_add_container">
+    <input placeholder="Buscar..." type="text" [(ngModel)]="filteredString">
+    <div class="boton_add_container">
+        <a class="boton_add_us" routerLink="/Usuarios/Registro">
+            <img class="add_icon" src="assets/icons/Icono_add_us.svg" alt="editar_usuario" width="30px"> Registrar usuario</a>
+    </div>
+</div>
+<!-- Tabla de administrar usuarios -->
+    <table>
+        <tr>
+        <th>Área</th>
+        <th>Cargo</th>
+        <th>Nombre</th>
+        <th>Número</th>
+        <th>Correo</th>
+        <th>Rol</th>
+        <th>Eliminar</th>
+        <th>Modificar</th>
+    </tr>
+       <!--  <tr>
+            <td>Contabilidad</td>
+            <td>Líder</td>
+            <td>Juan Ramirez</td>
+            <td>3223562020</td>
+            <td>juan.ramirez@colchonesparaiso.com</td>
+            <td>Administrador</td>
+            <td><a class="boton_admin_us" href=""><img src="assets/icons/Eliminar_usuario.svg" alt="Eliminar_usuario" width="30px">Eliminar</a></td>
+            <td><a class="boton_admin_us" href=""><img src="assets/icons/Icono_editar_usuario.svg" alt="editar_usuario" width="30px">Modificar</a></td>
+        </tr> -->
+        <tr *ngFor="let usuario of usuarios | filterUser:filteredString | paginate: { id: 'foo2',
+        itemsPerPage: 5,
+        currentPage: actualPage}">
+            <td>{{usuario.area}}</td>
+            <td>{{usuario.position}}</td>
+            <td>{{usuario.first_name}} {{usuario.second_name}} {{usuario.first_surname}} {{usuario.second_surname}}</td>
+            <td>{{usuario.number}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.name}}</td>
+            <td><a class="boton_admin_us" (click)="borrarUsuario(usuario.id)"><!-- <img src="assets/icons/Eliminar_usuario.svg" alt="Eliminar_usuario" width="30px"> --> Eliminar</a></td>
+            <td><a class="boton_admin_us" routerLink="/Usuarios/Modificar/{{usuario.id}}"><!-- <img src="assets/icons/Icono_editar_usuario.svg" alt="editar_usuario" width="30px"> --> Modificar</a></td>
+        </tr>
+    </table>
+<br>
+    <div class="paginator_container">
+        <pagination-controls 
+        class="my-pagination"    
+        previousLabel="Atrás"
+        nextLabel="Adelante"
+        (pageChange)="actualPage = $event" id="foo2">
+        </pagination-controls></div>

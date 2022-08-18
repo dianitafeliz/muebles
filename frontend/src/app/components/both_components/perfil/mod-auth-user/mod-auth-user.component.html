@@ -1,0 +1,23 @@
+<app-modal-change-password (closeItemEvent)="hideComponent($event)" *ngIf="modalPassSwitch"></app-modal-change-password>
+<a routerLink="/Mi_perfil">
+    <img src="assets/icons/Icono_left.svg" alt="atrás" width="40px" class="atras">
+    </a>
+    <h1 class="titulo_mod_us">MODIFICAR INFORMACIÓN</h1>
+    <form [formGroup]="modForm" (ngSubmit)="actualizarDatos()">
+<section class="perfil_container">
+    <div style="background-image: url({{UserProfile?.direction}})" class="foto_perfil"></div>
+<ul class="info_perfil" *ngFor="let element of usuario">
+    <li><span class="label_info">Correo: </span>{{element.email}}</li>
+    <li><span class="label_info">Nombre: </span>{{element.first_name}} {{element.second_name}} {{element.first_surname}} {{element.second_surname}}</li>
+    <li><span class="label_info">Número: </span> <input type="text" formControlName="number"></li>
+    <li><span class="label_info">Área: </span>{{element.area}}</li>
+    <li><span class="label_info">Cargo: </span>{{element.position}}</li>
+    <li><span class="label_info">Rol: </span>{{element.name}}</li>
+    <a class="cambiar" routerLink="/Usuarios/Modificar" (click)="showComponent()"> Cambiar contraseña</a>
+    <br><br>
+    <button type="submit" class="boton_admin_us" > Modificar</button>
+    <br>
+    
+</ul>
+</section>
+</form>

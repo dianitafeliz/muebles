@@ -1,0 +1,19 @@
+          <!--Barra para comentar-->
+          <form  [formGroup]="singinForm" (ngSubmit)="procesarImagen()">
+            <div class="centrar">
+
+                <textarea formControlName="text" class="txta_com" placeholder="Dejar comentario..."></textarea>
+            <button type="submit" class="icono_enviar {{disabled}}"></button>
+                </div>
+                <div class="prueba2">
+                <!-- ************* PREVISUALIZACIÓN **************** -->
+                <div *ngIf="previsualizacion!==''">
+                    <img class="prev" width="100px" [src]="previsualizacion" alt="">
+                </div>
+                    <label class="img_file" >
+<!--                         <input formControlName="image_id" id="add_img_post" class="hide" type="file" accept=".png, .jpg, .jpeg">
+ -->
+                        <input formControlName="image_id" (change)="captureImage($event)" class="ocultar" type="file" accept=".png, .jpg, .jpeg">
+                    </label>                
+                </div>
+            </form>

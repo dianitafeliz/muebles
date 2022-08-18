@@ -1,0 +1,62 @@
+<a routerLink="/Usuarios">
+    <img src="assets/icons/Icono_left.svg" alt="atrás" width="40px" class="atrass">
+    </a>
+ 
+ <h1 class="titulo_mod_us">MODIFICAR USUARIO</h1>
+ <form [formGroup]="modForm" (ngSubmit)="actualizarDatos()">
+    <table>
+        <tr>
+        <th></th>
+        <th></th>
+    </tr>
+        <td>
+        <tr>Área:</tr>
+        <tr>Cargo:</tr>
+        <tr>Primer Nombre:</tr>
+        <tr>Segundo Nombre:</tr>
+        <tr>Primer Apellido:</tr>
+        <tr>Segundo Apellido:</tr>
+        <tr>Número:</tr>
+        <tr>Correo:</tr>
+        <tr>Rol:</tr>
+        <tr>Modificar:</tr>
+        </td>
+        
+
+        <td *ngFor="let usuario of usuarios">
+            <tr><!-- <input value="{{usuario.area}}" type="text"> -->
+                <select name="area" formControlName="area">
+                    <option value="Comercial-ventas">Comercial-ventas</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Publicidad">Publicidad</option>
+                    <option value="Administración">Administración</option>
+                    <option value="Logística">Logística</option>
+                    <option value="Calidad">Calidad</option>
+                    <option value="Producción">Producción</option>
+                    <option value="Compras">Compras</option>
+                    <option value="Financiera">Financiera</option>
+                    <option value="Contabilidad">Contabilidad</option>
+                    <option value="Recursos Humanos">Recursos Humanos</option>
+                    <option value="Coordinadores">Coordinadores</option>
+                    <option value="Gerencias">Gerencias</option>
+                    <option value="Gerencia General">Gerencia General</option>
+                  </select>
+                </tr>
+            
+            <tr><input formControlName="position" type="text"></tr>
+            <tr><input formControlName="first_name" type="text"></tr>
+            <tr><input formControlName="second_name" type="text"></tr>
+            <tr><input formControlName="first_surname" type="text"></tr>
+            <tr><input formControlName="second_surname" type="text"></tr>
+            <tr><input formControlName="number" type="text"></tr>
+            <tr><input formControlName="email" type="text"></tr>
+            <tr><!-- <input value="{{usuario.name}}" type="text"> -->
+                <select name="rol" formControlName="rol_id">
+                    <option value="2">Administrador</option>
+                    <option value="1">colaborador</option>
+                  </select></tr>
+            
+            <tr class="btn_mod_container"><button class="boton_admin_us" type="submit">Modificar</button></tr>
+        </td>
+
+    </table>

@@ -1,0 +1,25 @@
+<app-general-menu></app-general-menu>
+<app-admin-menu></app-admin-menu>
+<section class="perfil_container">
+    <div style="background-image: url({{UserProfile?.direction}})" class="foto_perfil"></div>
+<ul class="info_perfil">
+    <li><span class="label_info">Correo: </span>{{UserProfile?.email}}</li>
+    <li><span class="label_info">Nombre: </span>{{UserProfile?.first_name}} {{UserProfile?.second_name}} {{UserProfile?.first_surname}} {{UserProfile?.second_surname}}</li>
+    <li><span class="label_info">Número: </span>{{UserProfile?.number}}</li>
+    <li><span class="label_info">Área: </span>{{UserProfile?.area}}</li>
+    <li><span class="label_info">Cargo: </span>{{UserProfile?.position}}</li>
+    <li><span class="label_info">Rol: </span>{{UserProfile?.name}}</li>
+    <a class="cambiar" routerLink="/Usuarios/Modificar">Cambiar información</a>
+</ul>
+</section>
+
+<form class="imagen" [formGroup]="singinForm" (ngSubmit)="procesarImagen()">
+                        <!-- ************* PREVISUALIZACIÓN **************** -->
+                        <div *ngIf="previsualizacion!==''">
+                            <img class="prev" width="100px" [src]="previsualizacion" alt="">
+                        </div>
+    <br>
+    <input type="file" accept=".png, .jpg, .jpeg" (change)="captureImage($event)">
+    <br>
+    <button class="btn_change_img" type="submit">Subir imagen</button>
+</form>

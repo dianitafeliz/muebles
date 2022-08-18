@@ -1,0 +1,25 @@
+body{
+    background-color: #f7f7f7;
+padding: 0;
+margin: 0;
+font-family: 'Montserrat', sans-serif;
+         /* offset-x | offset-y | color */
+}
+textarea{
+    resize: none;
+}
+.hide{
+    visibility: hidden;
+    display: none;
+    position: absolute;
+}
+
+textarea::-webkit-input-placeholder { color: #c1c1c1; } 
+textarea:-moz-placeholder { /* Firefox 18- */ color: #c1c1c1; } 
+textarea::-moz-placeholder { /* Firefox 19+ */ color: #c1c1c1; } 
+textarea:-ms-input-placeholder { color: #c1c1c1; }
+
+input::-webkit-input-placeholder { color: #c1c1c1; } 
+input:-moz-placeholder { /* Firefox 18- */ color: #c1c1c1; } 
+input::-moz-placeholder { /* Firefox 19+ */ color: #c1c1c1; } 
+input:-ms-input-placeholder { color: #c1c1c1; }

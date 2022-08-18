@@ -1,0 +1,34 @@
+<nav class="nav_gen">
+    <div class="">
+        <a  routerLink="/Home">
+            <img [src]="paraiso_image" class="paraiso" alt="paraiso" width="150px">
+        </a>
+        
+    </div>
+    <a class="boton_desplegar" (click)="mostrarOcultar_menu()">
+    <span class="perfil">
+
+            <div style="background-image: url({{UserProfile?.direction}})" class="pro_pic info_perfil" alt="" width="50px"></div>
+            <!-- <img [src]="image" alt="foto_perfil" width="50px"> -->
+            <span>
+                <p class="hamburguesa"><span class="info_perfil">{{UserProfile!.first_name}}  {{UserProfile!.first_surname}}</span><span class="menu-icon {{fondo}}">☰</span></p>
+                <p class="rol info_perfil">{{UserProfile?.name}}</p>
+            </span>
+    </span>  
+    </a>   
+</nav>
+
+<div (click)="mostrarOcultar_menu()" class="dropdown_container {{visibilidad}}">
+<ul class="list-container">
+    <a routerLink="/Mi_perfil">
+    <li><img class="iconos" src="../../../../assets/icons/perfil.png" width="20px" alt="">
+        Mi perfil
+    </li>
+    </a>
+    <a (click)="signOut()" >
+    <li><img class="iconos" src="../../../../assets/icons/salir1.png" width="20px" alt="">
+        Cerrar sesión
+    </li>
+    </a>
+</ul>
+</div>   

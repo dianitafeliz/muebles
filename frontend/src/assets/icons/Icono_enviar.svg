@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="120"
+   height="120"
+   viewBox="0 0 120 120"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="Icono_enviar.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.5291184"
+     inkscape:cx="50.682798"
+     inkscape:cy="56.568542"
+     inkscape:window-width="1350"
+     inkscape:window-height="728"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path846"
+       style="fill:none;stroke:#000000;stroke-width:3.96875;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:transform-center-x="-18.431041"
+       inkscape:transform-center-y="-0.072311171"
+       d="M 114.17494,54.273643 99.044764,54.600147 35.29787,54.681402 4.1919602,22.062005 c 0,0 -2.5694417,-5.887232 1.8435676,-8.149045 4.4130082,-2.261814 12.0067762,1.524276 12.0067762,1.524276 L 107.25706,45.91543 c 6.20047,3.002237 8.2758,5.867824 8.53073,6.952411 0.25727,1.094463 -1.33557,0.39872 -1.61285,1.405797 z"
+       sodipodi:nodetypes="cccczccsc" />
+    <path
+       id="path846-3"
+       style="fill:none;stroke:#000000;stroke-width:3.98309;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:transform-center-x="-18.428532"
+       inkscape:transform-center-y="0.072902515"
+       d="M 114.17493,54.273643 99.038556,54.165621 35.30035,54.083743 4.1986762,86.943684 c 0,0 -2.569089,5.930642 1.8433162,8.209135 4.4124066,2.278493 12.0051416,-1.535513 12.0051416,-1.535513 L 107.4553,62.537375 c 6.60848,-3.223826 8.44813,-7.242233 8.45194,-8.29866 0.003,-0.934734 -1.47317,0.983051 -1.73231,0.03485 z"
+       sodipodi:nodetypes="cccczccscc" />
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<input class="buscador" placeholder="Buscar..." type="text" [(ngModel)]="filteredString">
+
+    <h1 class="titulo_directorio">DIRECTORIO</h1>
+    <table>
+        <tr>
+        <th>Área</th>
+        <th>Cargo</th>
+        <th>Nombre</th>
+        <th>Número</th>
+        <th>Correo</th>
+        <th>Rol</th>
+    </tr>
+        <tr *ngFor="let usuario of usuarios | filterUser:filteredString | paginate: { id: 'foo',
+        itemsPerPage: 5,
+        currentPage: actualPage}">
+            <td>{{usuario.area}}</td>
+            <td>{{usuario.position}}</td>
+            <td>{{usuario.first_name}} {{usuario.second_name}} {{usuario.first_surname}} {{usuario.second_surname}}</td>
+            <td>{{usuario.number}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.name}}</td>
+        </tr>
+    </table>
+<br>
+    <div class="paginator_container">
+        <pagination-controls 
+        class="my-pagination"    
+        previousLabel="Atrás"
+        nextLabel="Adelante"
+        (pageChange)="actualPage = $event" id="foo">
+        </pagination-controls></div>

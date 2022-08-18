@@ -1,0 +1,57 @@
+.foto_perfil{
+    min-width: 300px;
+    min-height: 300px;
+    margin: 70px 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.info_perfil{
+    display: inline-block;
+    margin: 20px;
+    list-style: none;
+}
+.label_info{
+    font-weight: 700;
+}
+.perfil_container{
+    display: flex;
+    align-items: center;
+}
+.imagen{
+    margin-left: 10%;
+}
+.btn_change_img{
+    background-color: #8F702F;
+    padding: 2px 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #f7f7f7;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn_change_img:active{
+    transform: scale(0.95);
+}
+@media screen and (max-width: 500px){
+    .info_perfil{
+        position: relative;
+        max-width: 80%;
+        overflow: auto;
+        margin-left: 10%;
+        font-size: 13px;
+    }
+    .foto_perfil{
+        max-width: 80%;
+        min-width: 80%;
+    }
+    .perfil_container{
+        display: block;
+    }
+}
+
+.cambiar:link{
+    color:darkgoldenrod;
+}

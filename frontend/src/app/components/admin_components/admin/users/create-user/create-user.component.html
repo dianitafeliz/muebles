@@ -1,0 +1,96 @@
+<a routerLink="/Usuarios">
+  <br>
+  <img src="assets/icons/Icono_left.svg" alt="atrás" width="40px" class="atras">
+  </a>
+
+<h1>AÑADIR USUARIOS</h1>
+<div class="form_container">
+    <form [formGroup]="singinForm" (ngSubmit)="enviarDatos()">
+     
+      <!-- correo -->
+      <div>
+        <label for="email">Correo eléctronico:</label>
+        <input type="text" class="input" formControlName="email">
+      </div>
+      {{ errors?.email }}
+      <!-- Número -->
+      <div>
+        <label for="number">Número de telefono:</label>
+        <input type="text" class="input" formControlName="number">
+      </div>
+      {{ errors?.number }}
+      <!-- Primer nombre -->
+      <div>
+        <label for="f_name">Primer nombre:</label>
+        <input type="text" class="input" formControlName="first_name">
+      </div>
+      {{ errors?.first_name }}
+      <!-- Segundo Nombre -->
+      <div>
+        <label for="s_name">Segundo nombre</label>
+          <input type="text" class="input" formControlName="second_name">
+        </div>
+      {{ errors?.second_name }}
+      <!-- Primer apellido -->
+      <div>
+        <label for="f_surname">Primer apellido:</label>
+        <input type="text" class="input" formControlName="first_surname">
+      </div>
+      {{ errors?.first_surname }}
+      <!-- Segundo apellido -->
+      <div>
+        <label for="s_surname">Segundo apellido:</label>
+          <input type="text" class="input" formControlName="second_surname">
+      </div>
+      {{ errors?.second_surname }}
+      <!-- Cargo -->
+      <div>
+        <label for="position">Cargo:</label>
+        <input formControlName="position" type="text" class="input">
+      </div>
+      {{ errors?.position }}
+      <!-- Rol -->
+      <div>
+        <label for="rol">Rol:</label>
+        <br>
+        <select name="rol" formControlName="rol_id">
+          <option value="2">Administrador</option>
+          <option value="1">Colaborador</option>
+        </select>
+      </div>
+      {{ errors?.rol_id }}
+      <!-- Cumpleaños -->
+      <div>
+        <label for="birthday">Cumpleaños:</label>
+        <br>
+        <input type="date" formControlName="birthday">
+      </div>
+      {{ errors?.birthday }}
+      <!-- Área -->
+      <div>
+        <label for="area">Area:</label>
+        <br>
+        <select name="area" formControlName="area">
+          <option value="Comercial-ventas">Comercial-ventas</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Publicidad">Publicidad</option>
+          <option value="Administración">Administración</option>
+          <option value="Logística">Logística</option>
+          <option value="Calidad">Calidad</option>
+          <option value="Producción">Producción</option>
+          <option value="Compras">Compras</option>
+          <option value="Financiera">Financiera</option>
+          <option value="Contabilidad">Contabilidad</option>
+          <option value="Recursos Humanos">Recursos Humanos</option>
+          <option value="Coordinadores">Coordinadores</option>
+          <option value="Gerencias">Gerencias</option>
+          <option value="Gerencia General">Gerencia General</option>
+        </select>
+      </div>
+      {{ errors?.area }}
+    <div class="boton_container">
+<!--       <button ((click))="singIn" >Registrar</button> -->
+  <button type="submit" class="{{disabled}}">Registrar</button>
+    </div>
+    </form>
+  </div>

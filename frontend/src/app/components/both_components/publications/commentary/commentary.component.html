@@ -1,0 +1,46 @@
+
+<!--comentario-->
+    <div class="commentary_container" *ngFor="let comentario of comentarios;let indice=index" 
+    [ngClass]="{
+        'hide':comentario.isVisible==false}">    
+        <span class="commentary_item2">
+            <div style="background-image: url({{comentario.pro_picture}})" class="pro_pic" alt="" min-width="50px" height="50px"></div>
+
+        <span class="names">{{comentario.first_name}} {{comentario.first_surname}}</span>
+        <span (click)="mostrarOcultar_opciones(indice)" *ngIf="is_admin || comentario.coment_own  " class="tres_puntos"> &nbsp; ፧ </span>
+        <div (click)="mostrarOcultar_opciones(indice)"  *ngIf="comentario.isOptions" class="opciones_container"></div>
+        <div *ngIf="comentario.isOptions">
+            <ul class="opciones">
+                <li><a class="mod_commentary" *ngIf="comentario.coment_own" routerLink="/Home/Modificar/{{comentario.id}}"><img src="../../../../../assets/icons/editar.png" width="18px" alt="">   Editar</a></li>
+                <li><a class="del_commentary" *ngIf="is_admin || comentario.coment_own" (click)="borrarPost(comentario.message_id,comentario.reply_to, comentario.image_id)"><img src="../../../../../assets/icons/eliminar.png" width="15px" alt=""> Eliminar</a></li>
+
+            </ul>        
+        </div>
+    </span>
+    <span class="content_cm">
+        <p class="commentary_paragraph" *ngIf="comentario.text!==null">
+            {{comentario.text}}</p>
+            <div class="{{disabled}}" (click)="onEditClick_crz(comentario.idReaction, indice)">
+        </div>
+        <p class="prueba2" *ngIf="comentario.text==null">
+            {{comentario.text}}</p>
+            <div class="{{disabled}}" (click)="onEditClick_crz(comentario.idReaction, indice)">
+            <img  class="icon_commentary" src="assets/icons/corazon.png" *ngIf="comentario.isReaction" >
+            <img class="icon_commentary" src="assets/icons/corazon.svg" *ngIf="!comentario.isReaction">
+        </div>
+        </span>
+        <img class="commentary_item3" src="{{comentario.direction}}">
+        
+        <span [ngClass]="{
+            'icon_dado':comentario.isReaction==true}">{{comentario.likes}} Me gusta</span> &nbsp;<span (click)="onEditClick_cm(indice)" [ngClass]="{
+                'icon_dado':comentario.isComment==true}" class="cursor_cmt">{{comentario.responses}} Comentarios</span>
+        <span class="fecha"> &nbsp; {{comentario.date | date:'yyyy-MM-dd'}}</span><br>
+
+        <!-- Sub comentarios -->
+        <div *ngIf="comentario.isComment">
+            <app-comment [indice_post]="indice" [id_post]="comentario.id" (incr_num_comment)="recibir_padre_post($event)"></app-comment>
+        <app-commentary class="comentario" [is_admin]="is_admin"  [indice_post]="indice" [id_post]="comentario.id" (incr_num_comment2)="otrafuncion($event)" (act_num_comment)="recibirMensaje($event)" ></app-commentary>
+    </div>
+    <br>
+</div>
+<a class="link" (click)="loadmore()" *ngIf="(page!=null)">Cargar más comentarios...</a>

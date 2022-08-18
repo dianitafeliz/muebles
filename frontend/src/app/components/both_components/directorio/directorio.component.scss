@@ -1,0 +1,47 @@
+.titulo_directorio{
+    text-align: center;
+    margin: 30px auto;
+    font-size: 25px;
+}
+
+table,tr{
+    border-collapse:collapse;
+        border: 2px solid #efefef;
+        margin: auto;
+        th{
+            background-color:#dae4ea ;
+            color:#2497f3;
+                }
+                th, td, tr{
+                    padding: 10px 15px;
+                }
+}
+.paginator_container{
+    text-align: center;
+}
+.buscador{
+    border-radius: 10px;
+    width: 60%;
+    padding: 2px 10px 2px 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+}
+@media screen and (max-width: 600px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      max-width: 90%;
+      min-width: 90%;
+      width: 90%;
+        font-size: 12px;
+    }
+    table,tr{
+                    th, td, tr{
+                        padding: 5px;
+                    }
+    }
+    
+}
+/*  .my-pagination ::ng-deep .ngx-pagination .current {
+  }  */

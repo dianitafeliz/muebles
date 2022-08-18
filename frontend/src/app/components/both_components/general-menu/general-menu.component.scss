@@ -1,0 +1,146 @@
+*,
+*:before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_gen{
+    background: #EFEFEF;
+
+/*     padding: 15px;
+ */    
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    z-index: 8;
+}
+
+nav{
+
+/*     box-shadow:100px -20px rgb(37, 46, 46);*/
+    input{
+        border-radius: 10px;
+        width: 30%;
+        padding: 2px 10px 2px 10px;
+
+    }
+    div{
+        width: 16%;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    span{    
+        display: inline-block; 
+        text-align: left;
+    }
+
+}
+.paraiso{
+    margin-left: 8%;
+    text-align: center;
+    display: inline-block;
+}
+
+.iconos{
+    background-color: transparent;
+}
+
+.pro_pic{
+    display: inline-block;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 180px;
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 5px;
+}
+.rol{
+    font-size: 12px;
+}
+.perfil{
+    margin-right: 30px;
+    color: black;
+}
+//Menú desplegable
+.dropdown_container{
+    text-align: left;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 100vh;
+    
+/*     visibility: hidden;
+ */}
+.dropdown_container li{
+    background-color: #f7f7f7;
+    padding: 5px;
+    list-style: none;
+    border: 1px solid #aeb4b7;
+    border-radius: 5px;
+    border-color: #8F702F;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.list-container{
+    position: relative;
+    top: 60px;
+    margin-right: 40px;
+}
+.dropdown_container li:hover{
+    background-color: #e4dcdc;
+    cursor: pointer;
+}
+.dropdown_container li:not(:first-child){
+ border-top: 2px solid #efefef;
+}
+.dropdown_container a{
+    color: black;
+    text-decoration: none;
+}
+.boton_desplegar{
+    color: black;
+    border: 0;
+    background-color: transparent;
+}
+.hamburguesa{
+ cursor: pointer;
+}
+.menu-icon{
+    margin-left: 20px;
+    font-size: 22px;
+    padding: 2px 6px;
+/*     border: 2px solid #f7f7f7;
+    border-radius: 5px; */
+}
+.menu-icon-dado{
+    background-color: #8F702F;
+}
+@media screen and (max-width: 500px){
+    .info_perfil{
+        display: none;
+    }
+    .nav_gen{
+        width: 100%;
+    }
+    .perfil{
+        font-size: 12px;
+    }
+    .list-container{
+        font-size: 12px;
+    }
+}

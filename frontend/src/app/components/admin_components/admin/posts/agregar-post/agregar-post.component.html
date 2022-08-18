@@ -1,0 +1,19 @@
+<form  [formGroup]="addPostForm" (ngSubmit)="procesarImagen()">
+    <div class="elements_container">
+        <div class="publicar_container">
+            <textarea formControlName="text" class="publicar_textarea" placeholder="¿Qué nos quieres contar?"></textarea>
+            <br>
+        </div>
+        <div *ngIf="previsualizacion!==''">
+            <img class="prev" width="100px" [src]="previsualizacion" alt="">
+        </div>
+        <span class="opciones_publicar">
+
+        <label class="img_file">
+            <input formControlName="image_id" class="imge ocultar" type="file" accept=".png, .jpg, .jpeg" (change)="captureImage($event)">
+            <br>
+        </label>
+            <button class="boton_publicar {{disabled}}">Publicar</button>
+        </span>
+    </div>
+</form>

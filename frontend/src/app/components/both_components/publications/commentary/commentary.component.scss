@@ -1,0 +1,144 @@
+.commentary_container{
+    box-sizing: content-box;
+    background-color: white;
+    padding: 10px 15px 0 15px;
+    border-top: 2px solid rgb(204, 204, 204);
+    border-bottom: 2px solid rgb(204, 204, 204);
+    margin: -1px 0 0 -1px;
+    background-color: #f3f1f1;
+}
+.commentary_container:last-child{
+    border: 0;
+    pagination-template{
+        visibility: hidden;
+    }
+    nav{
+        display: none;
+    }
+}
+
+.commentary_item3{
+display: block;
+    width: 150px;
+}
+.icon_commentary{
+    width: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.commentary_paragraph{
+    margin: 10px 0;
+    font-size: 12.7px;
+    color: #1a1b1b;
+}
+.second{
+    display: inline;
+}
+.commentary_item2{
+    display: flex;
+    align-items: center;
+}
+.content_cm{
+    display: flex;
+    justify-content: space-between;
+}
+.del_commentary{
+    cursor: pointer;
+    user-select: none;
+    text-decoration: underline;
+    margin-left: 60%;
+}
+
+.icon_dado{
+    color: black;
+}
+.no-pointer-events{
+    pointer-events: none;
+}
+.cursor_cmt{
+    cursor: pointer;
+}
+.link{
+    color: #014f7f;
+    cursor: pointer;
+    margin-left: 3%;
+}
+.mod_commentary{
+    color: black;
+    justify-content: center;
+    
+    
+}
+.tres_puntos{
+    margin-left: 25%;
+    cursor: pointer;
+    margin-top: -40px;
+    font-size: 21px;
+}
+.opciones{
+    position: absolute;
+    list-style: none;
+    
+}
+.opciones a{
+    width: 81px;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-content: center;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 2px solid #8F702F;
+    border-radius: 5px;
+    margin:-2px 0 0 -2px;
+    background-color: #f7f7f7;
+}
+
+.opciones a:hover{
+    background-color: #e4dcdc;
+}
+.color-fosfo{
+    background-color: #8F702F;
+}
+.prueba2{
+    width: 90%;
+    height: 5px;
+}
+.fecha{
+    font-size: 11px;
+    color:#878c8f;
+}
+.names{
+    min-width: 60%;
+}
+.comentario{
+    font-size: 12px;
+    color: #8F702F;
+}
+.opciones_container{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    height: 100vh;
+}
+
+@media screen and (max-width: 500px){
+    .pro_pic{
+        width: 35px;
+        min-width: 35px;
+        max-width: 35px;
+        height: 35px;
+        margin-right: 20px;
+    }
+    .tres_puntos{
+        margin-left: 20%;
+    }
+    .opciones{
+        margin-left:-50px;
+    }
+    .opciones a{
+        margin-left: 0;
+    }
+}

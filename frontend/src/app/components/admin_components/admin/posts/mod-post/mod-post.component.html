@@ -1,0 +1,23 @@
+<a routerLink="/Home">
+  <img src="assets/icons/Icono_left.svg" alt="atrás" width="40px" class="atras">
+</a>
+  
+  <h1>MODIFICAR PUBLICACIÓN</h1>
+  <div class="form_container">
+<!--       <form  (ngSubmit)="enviarDatos()"> -->
+    <form [formGroup]="modPostForm" (ngSubmit)="actualizarMesage()">
+       
+        <!-- correo -->
+        <textarea formControlName="text" value="hola" class="textarea_mod_post"></textarea>
+        
+<!--         <label class="img_file" for="add_img_post">
+            <input id="add_img_post" class="imge hide" type="file" accept=".png, .jpg, .jpeg">
+        </label> -->
+          
+      <div class="boton_container">
+  <!--       <button ((click))="singIn">Registrar</button> -->
+    <button type="submit">Editar</button>
+      </div>
+      </form>
+    </div>
+  

@@ -1,0 +1,67 @@
+<app-general-menu></app-general-menu>
+<app-admin-menu></app-admin-menu>
+<input class="buscador" placeholder="Buscar..." type="text" (keydown)="filterPost($event)">
+<app-agregar-post (add_post)="refresh_post()" *ngIf="administrador" ></app-agregar-post>
+<div infinite-scroll
+(scrolled)="onScrollDown()"
+[scrollWindow]="true">
+       <div class="post_center" *ngFor="let post of publicaciones;let indice=index">
+        <div class="post_container">
+            <div style="background-image: url({{post.pro_picture}})" class="post_item1 " class="prof_picture" alt="foto de perfil"></div>
+            <!--Publicación-->
+        <span class="post_item2">{{post.first_name}} {{post.first_surname}}
+            <br>
+            <span>{{post.rol}}</span>
+        </span>
+        <div (click)="mostrarOcultar_opciones(indice)"  *ngIf="post.isOptions" class="opciones_container"></div>
+
+        <span (click)="mostrarOcultar_opciones(indice)" class="post_item3">{{post.date | date:'yyyy-MM-dd'}} <span *ngIf="administrador" class="tres_puntos"> &nbsp; ፧ </span>
+            <br>
+            <br>
+            
+            <div *ngIf="post.isOptions">
+                <ul class="opciones" *ngIf="administrador"  class="post_item7">
+                    <li><a routerLink="/Home/Modificar/{{post.id}}"><img src="../../../../../assets/icons/editar.png" width="18px" alt="">Editar</a></li> 
+                    <li><a class="opciones" (click)="borrarPost(post.message_id,post.image_id)" ><img src="../../../../../assets/icons/eliminar.png" width="15px" alt="">Eliminar</a></li>
+                </ul>
+            </div>
+        </span>        
+
+
+        <p class="post_item4 margin_post post_text">
+            {{post.text}}</p>
+        <img class="post_item4 post_img" src="{{post.direction}}">
+<!--         <span class="mg_cm post_item5" >
+            <img [contentEditable]="canEdit_crz" (click)="onEditClick_crz()" class="icon_post" src={{corazon}}>        
+            <img [contentEditable]="canEdit_cm" (click)="onEditClick_cm()" class="post_item icon_post" src={{comentario}}>
+        </span> -->
+        <span class="num_reac">
+            <p class="" *ngIf="post.likes!==0">{{post.likes}} <img class="icon_post " src="assets/icons/corazon.png"></p>
+            <p class="" (click)="onEditClick_cm(indice)" *ngIf="post.responses!==0">{{post.responses}}<img class="post_item icon_post" src="assets/icons/comentario1.png"></p>
+        </span>
+<!-- Parte de la publicación en donde se encuentran ubicados los botones de reacción -->
+        <span class="mg_cm">
+            <span (click)="onEditClick_crz(post.idReaction,indice)" [ngClass]="{
+                'icon_dado':post.isReaction==true}" class="act_bttn division {{disabled}}">
+                <!--<img ng-if="item.loaded" src={{item.preview2}} class="grid-img-loaded"/>
+    <img ng-    if="!item.loaded" src={{item.preview}} class="grid-img"/> -->
+                <img  class="icon_post" src='assets/icons/corazon.png' *ngIf="post.isReaction" >        
+                <img  class="icon_post" src='assets/icons/corazon.svg' *ngIf="!post.isReaction">        
+                Me gusta
+            </span>
+                <span (click)="onEditClick_cm(indice)" [ngClass]="{
+                    'icon_dado':post.isComment==true}" class="act_bttn">
+
+                <img  class="post_item icon_post " src='assets/icons/comentario1.png' *ngIf="post.isComment">        
+                <img  class="post_item icon_post " src='assets/icons/Publicacion_comentario.svg' *ngIf="!post.isComment">
+                    Comentario
+            </span>
+            </span>
+    <div class="post_item6 " *ngIf="post.isComment">
+        <app-comment [indice_post]="indice" [id_post]="post.id" (incr_num_comment)="recibir_padre_post($event)"></app-comment>
+        <app-commentary [indice_post]="indice" [id_post]="post.id" [is_admin]="administrador" [id_pub]="id_post" (incr_num_comment2)="otrafuncion($event)" (act_num_comment)="recibirMensaje($event)"></app-commentary>
+    </div>
+        </div>
+        </div>
+    </div>
+        <button class="btn_watch_user" *ngIf="showButton" (click)="onScrollTop()"></button>

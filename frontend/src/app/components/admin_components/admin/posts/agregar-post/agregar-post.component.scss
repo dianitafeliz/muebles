@@ -1,0 +1,67 @@
+
+.publicar_textarea{
+    margin: 50px auto 10px auto;
+    width: 95%;
+    height: 70px;
+    border-radius: 5px;
+    padding: 3px 7px;
+    border: 2px solid #8F702F;
+    border-style: dotted;
+}
+.boton_publicar{
+    background-color: #8F702F ;
+    padding: 5px;
+    border: 0;
+    border-radius: 7px;
+    margin: 5px 15px;
+    color: #f7f7f7;
+}
+.boton_publicar:active{
+    z-index: 20;
+    transform: scale(0.97);
+}
+.parrafo{
+    text-align: left;
+    margin-left: 5%;
+    color: #f7f7f7;
+}
+.opciones_publicar{
+display: flex;
+justify-content: right;
+}
+.elements_container{
+    width: 40%;
+    margin: auto;
+}
+.publicar_textarea:focus{
+    outline: none;
+}
+.img_file{
+    background-image:url('../../../../../../assets/icons/sube.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    width: 30px;
+    cursor: pointer;
+}
+.ocultar{
+    opacity: 0;
+    position: absolute;
+    width: 5px;
+}
+.prev{
+    display: block;
+    margin: 5px;
+}
+.no-pointer-events{
+    pointer-events: none;
+}
+@media screen and (max-width: 500px){
+    .elements_container{
+        width: 80%;
+    }
+    .publicar_textarea{
+        font-size: 12px;
+        height: 50px;
+    }
+}
